@@ -1,6 +1,6 @@
 {
     "name": "php-notify/notify-laravel-notyf",
-    "description": "Laravel Notify adapter package for php-notify/notify-toastr",
+    "description": "Laravel Notify adapter package for php-notify/notify-notyf",
     "keywords": [
         "yoeunes",
         "notify",
@@ -12,9 +12,10 @@
         "messages",
         "alerts",
         "pnotify",
-        "toastr ",
+        "notyf ",
         "bundle",
-        "flex"
+        "flex",
+        "toastr"
     ],
     "homepage": "https://github.com/php-notify/notify-laravel",
     "authors": [

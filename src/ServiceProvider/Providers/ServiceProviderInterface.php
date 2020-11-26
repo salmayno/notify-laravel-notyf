@@ -1,16 +1,16 @@
 <?php
 
-namespace Notify\Laravel\Toastr\ServiceProvider\Providers;
+namespace Notify\Laravel\Notyf\ServiceProvider\Providers;
 
-use Notify\Laravel\Toastr\NotifyToastrServiceProvider;
+use Notify\Laravel\Notyf\NotifyNotyfServiceProvider;
 
 interface ServiceProviderInterface
 {
     public function shouldBeUsed();
 
-    public function publishConfig(NotifyToastrServiceProvider $provider);
+    public function publishConfig(NotifyNotyfServiceProvider $provider);
 
-    public function registerNotifyToastrServices();
+    public function registerNotifyNotyfServices();
 
-    public function mergeConfigFromToastr();
+    public function mergeConfigFromNotyf();
 }

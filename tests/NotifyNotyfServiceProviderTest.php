@@ -4,13 +4,13 @@ namespace Notify\Laravel\Notyf\Tests;
 
 class NotifyNotyfServiceProviderTest extends TestCase
 {
-    public function test_container_contain_notify_services()
+    public function testContainerContainNotifyServices()
     {
         $this->assertTrue($this->app->bound('notify.producer'));
         $this->assertTrue($this->app->bound('notify.producer.notyf'));
     }
 
-    public function test_notify_factory_is_added_to_extensions_array()
+    public function testNotifyFactoryIsAddedToExtensionsArray()
     {
         $manager = $this->app->make('notify.producer');
 
@@ -24,7 +24,7 @@ class NotifyNotyfServiceProviderTest extends TestCase
         $this->assertInstanceOf('Notify\Producer\ProducerInterface', $extensions['notyf']);
     }
 
-    public function test_config_notyf_injected_in_global_notify_config()
+    public function testConfigNotyfInjectedInGlobalNotifyConfig()
     {
         $manager = $this->app->make('notify.producer');
 
@@ -37,12 +37,9 @@ class NotifyNotyfServiceProviderTest extends TestCase
         $this->assertArrayHasKey('notyf', $config->get('adapters'));
 
         $this->assertEquals(array(
-            'notyf' => array(
-                'scripts' => array('jquery.js'),
-                'styles' => array('https://cdnjs.cloudflare.com/ajax/libs/notyf.js/2.1.4/notyf.min.css'),
-                'options' => array(),
-            ),
+            'toastr' => array('scripts' => array('jquery.js')),
             'pnotify' => array('scripts' => array('jquery.js')),
+            'notyf' => array('scripts' => array('jquery.js'), 'styles' => array('style.css'), 'options' => array()),
         ), $config->get('adapters'));
     }
 }

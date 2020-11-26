@@ -1,9 +1,9 @@
 <?php
 
-namespace Notify\Laravel\Toastr\ServiceProvider\Providers;
+namespace Notify\Laravel\Notyf\ServiceProvider\Providers;
 
 use Laravel\Lumen\Application;
-use Notify\Laravel\Toastr\NotifyToastrServiceProvider;
+use Notify\Laravel\Notyf\NotifyNotyfServiceProvider;
 
 final class Lumen extends Laravel
 {
@@ -12,12 +12,12 @@ final class Lumen extends Laravel
         return $this->app instanceof Application;
     }
 
-    public function publishConfig(NotifyToastrServiceProvider $provider)
+    public function publishConfig(NotifyNotyfServiceProvider $provider)
     {
         $source = realpath($raw = __DIR__.'/../../../resources/config/config.php') ?: $raw;
 
-        $this->app->configure('notify_toastr');
+        $this->app->configure('notify_notyf');
 
-        $provider->mergeConfigFrom($source, 'notify_toastr');
+        $provider->mergeConfigFrom($source, 'notify_notyf');
     }
 }

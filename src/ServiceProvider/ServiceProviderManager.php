@@ -1,9 +1,9 @@
 <?php
 
-namespace Notify\Laravel\Toastr\ServiceProvider;
+namespace Notify\Laravel\Notyf\ServiceProvider;
 
-use Notify\Laravel\Toastr\NotifyToastrServiceProvider;
-use Notify\Laravel\Toastr\ServiceProvider\Providers\ServiceProviderInterface;
+use Notify\Laravel\Notyf\NotifyNotyfServiceProvider;
+use Notify\Laravel\Notyf\ServiceProvider\Providers\ServiceProviderInterface;
 
 final class ServiceProviderManager
 {
@@ -13,14 +13,14 @@ final class ServiceProviderManager
      * @var ServiceProviderInterface[]
      */
     private $providers = array(
-        'Notify\Laravel\Toastr\ServiceProvider\Providers\Laravel4',
-        'Notify\Laravel\Toastr\ServiceProvider\Providers\Laravel',
-        'Notify\Laravel\Toastr\ServiceProvider\Providers\Lumen',
+        'Notify\Laravel\Notyf\ServiceProvider\Providers\Laravel4',
+        'Notify\Laravel\Notyf\ServiceProvider\Providers\Laravel',
+        'Notify\Laravel\Notyf\ServiceProvider\Providers\Lumen',
     );
 
     private $notifyServiceProvider;
 
-    public function __construct(NotifyToastrServiceProvider $notifyServiceProvider)
+    public function __construct(NotifyNotyfServiceProvider $notifyServiceProvider)
     {
         $this->notifyServiceProvider = $notifyServiceProvider;
     }
@@ -30,13 +30,13 @@ final class ServiceProviderManager
         $provider = $this->resolveServiceProvider();
 
         $provider->publishConfig($this->notifyServiceProvider);
-        $provider->mergeConfigFromToastr();
+        $provider->mergeConfigFromNotyf();
     }
 
     public function register()
     {
         $provider = $this->resolveServiceProvider();
-        $provider->registerNotifyToastrServices();
+        $provider->registerNotifyNotyfServices();
     }
 
     /**
