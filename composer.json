@@ -38,18 +38,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Notify\\Laravel\\Toastr\\": "src/"
+            "Notify\\Laravel\\Notyf\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Notify\\Laravel\\Toastr\\Tests\\": "tests/"
+            "Notify\\Laravel\\Notyf\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Notify\\Laravel\\Toastr\\NotifyToastrServiceProvider"
+                "Notify\\Laravel\\Notyf\\NotifyNotyfServiceProvider"
             ]
         }
     },

@@ -16,7 +16,7 @@ class TestCase extends Orchestra
     {
         return array(
             'Notify\Laravel\NotifyServiceProvider',
-            'Notify\Laravel\Toastr\NotifyToastrServiceProvider',
+            'Notify\Laravel\Toastr\NotifyNotyfServiceProvider',
         );
     }
 
@@ -32,6 +32,7 @@ class TestCase extends Orchestra
         $app['config']->set('notify'.$separator.'.adapters', array(
             'toastr' => array('scripts' => array('jquery.js')),
             'pnotify' => array('scripts' => array('jquery.js')),
+            'notyf' => array('scripts' => array('jquery.js')),
         ));
     }
 
