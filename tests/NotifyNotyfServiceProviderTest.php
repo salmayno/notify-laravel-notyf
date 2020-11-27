@@ -37,9 +37,7 @@ class NotifyNotyfServiceProviderTest extends TestCase
         $this->assertArrayHasKey('notyf', $config->get('adapters'));
 
         $this->assertEquals(array(
-            'toastr' => array('scripts' => array('jquery.js')),
-            'pnotify' => array('scripts' => array('jquery.js')),
-            'notyf' => array('scripts' => array('jquery.js'), 'styles' => array('style.css'), 'options' => array()),
+            'notyf' => array('scripts' => array('jquery.js'), 'styles' => array('styles.css'), 'options' => array()),
         ), $config->get('adapters'));
     }
 }
