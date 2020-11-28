@@ -29,7 +29,6 @@
     "license": "MIT",
     "require": {
         "php": ">=5.3",
-        "illuminate/support": "^4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0",
         "php-notify/notify-laravel": "^1.0.4",
         "php-notify/notify-notyf": "^1.0"
     },
